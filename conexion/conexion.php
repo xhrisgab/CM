@@ -3,7 +3,7 @@ function conectar() {
     $user='root';
     $pass='';
     $server='localhost';
-    $db = 'CM';
+    $db = 'CM2';
 
    //Comprueba la conexión 
 

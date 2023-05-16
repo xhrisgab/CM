@@ -2,29 +2,27 @@
 include('./conexion/conexion.php');
 $mysqli = conectar();
 
-$codigo = $_POST['codigo'];
-$nombre = $_POST['firstName'];
+$codigo = $_POST['ci'];
+$nombre = $_POST['nombre'];
 $lastName1 = $_POST['lastName1'];
 $lastName2 = $_POST['lastName2'];
 $birthdat = $_POST['birthday'];
 $address = $_POST['address'];
+$ciudad = $_POST['ciudad'];
+$telefono = $_POST['telefono'];
 $celular = $_POST['celular'];
 $sex = $_POST['sex'];
 
 if (mysqli_connect_errno()) {
     return 'No conectado';
 }
-/*else{
-    echo 'Conectado';}*/
+else{
+    echo 'Conectado';}
 
-$sql = "INSERT INTO PACIENTE VALUES (".$codigo.",'".$nombre."','".$lastName1."','".$lastName2."','".$birthdat."','".$address."','".$celular."','".$sex."')";
+$sql = "INSERT INTO paciente VALUES ('".$codigo."','".$nombre."','".$lastName1."','".$lastName2."','".$birthdat."','".$address."','".$ciudad."',".$telefono.",".$celular.",'".$sex."')";
 //    echo $sql;
         if (mysqli_query($mysqli, $sql) === TRUE) {
-    //         echo '<script type="text/javascript">
-    // alert("Se creo el Paciente de forma correcta");
-    // window.location.href="registro_paciente.php";
-    // </script>';
-    // exit(0);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

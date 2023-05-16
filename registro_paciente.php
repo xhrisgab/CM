@@ -19,12 +19,12 @@
 
                 <form action="datos_paciente.php" method="post">
                     <div class="form-group">
-                        <label for="CI">Codigo del paciente:</label>
-                        <input type="number" class="form-control" id="codigo" placeholder="Ingresa el codigo del paciente" name="codigo" min="1" max="999999999999">
+                        <label for="CI">Carnet de Identidad:</label>
+                        <input type="number" class="form-control" id="ci" placeholder="Ingresa el codigo del paciente" name="ci" min="1" max="999999999999">
                     </div>
                     <div class="form-group">
                         <label for="Nombre">Nombre del Paciente:</label>
-                        <input type="text" class="form-control" id="Nombre" placeholder="Ingresa el nombre del paciente" name="firstName">
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre del paciente" name="nombre">
                     </div>
                     <div class="form-group">
                         <label for="Apellido1">Apellido del Paciente1:</label>
@@ -36,15 +36,35 @@
                     </div>
                     <div class="form-group">
                         <label for="Data">Fecha de Nacimiento:</label>
-                        <input type="date" class="form-control" id="fechaNac" placeholder="Fecha de nacimiento" name="birthday">
+                        <input type="date" class="form-control" id="birthday" placeholder="Fecha de nacimiento" name="birthday">
                     </div>
                     <div class="form-group">
                         <label for="Direccion">Direccion del paciente:</label>
                         <input type="text" class="form-control" id="address" placeholder="Direccion del paciente" name="address">
                     </div>
                     <div class="form-group">
-                        <label for="Cellphone">Celphone:</label>
-                        <input type="number" class="form-control" id="celular" placeholder="cellphone" name="celular">
+                        <label for="Direccion">Ciudad:</label>
+                        <select class="form-group" aria-label="Default" name="ciudad" id="ciudad">
+                            <option selected>Seleccione una opcion...</option>
+                            <option value="La Paz">La Paz</option>
+                            <option value="Oruro">Oruro</option>
+                            <option value="Potosi">Potosi</option>
+                            <option value="Cochabamba">Cochabamba</option>
+                            <option value="Sucre">Sucre</option>
+                            <option value="Tarija">Tarija</option>
+                            <option value="Beni">Beni</option>
+                            <option value="Pando">Pando</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Cellphone">Telefono:</label>
+                        <input type="number" class="form-control" id="telefono" placeholder="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="Cellphone">Celular:</label>
+                        <input type="number" class="form-control" id="celular" placeholder="celular" name="celular">
                     </div>
                     <div class="form-group">
                         <label for="Sexo">Genero:</label>
