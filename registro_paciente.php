@@ -15,12 +15,12 @@
     <div class="container">
         <h2>Datos del paciente</h2>
         <div class="row justify-content-md-center">
-            <div class="col-lg-8 col-md-auto">
+            <div class="col-lg-8 col-md-12">
 
                 <form action="datos_paciente.php" method="post">
                     <div class="form-group">
                         <label for="CI">Carnet de Identidad:</label>
-                        <input type="number" class="form-control" id="ci" placeholder="Ingresa el codigo del paciente" name="ci" min="1" max="999999999999">
+                        <input type="text" class="form-control" id="ci" placeholder="Ingresa el codigo del paciente" name="ci">
                     </div>
                     <div class="form-group">
                         <label for="Nombre">Nombre del Paciente:</label>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Direccion">Ciudad:</label>
-                        <select class="form-group" aria-label="Default" name="ciudad" id="ciudad">
+                        <select class="form-select" aria-label="Default" name="ciudad" id="ciudad">
                             <option selected>Seleccione una opcion...</option>
                             <option value="La Paz">La Paz</option>
                             <option value="Oruro">Oruro</option>
@@ -80,9 +80,7 @@
         </div>
 <br>
         <div class="row">
-            <form action="pag_principal.php" method="post">
-                <input type="hidden" value="admin" name="nombre" id="nombre">
-                <input type="hidden" value="admin" name="pass" id="pass">
+            <form action="lista_paciente.php" method="post">
                 <button type="submit" class="btn btn-secondary">Atras...</button>
             </form>
         </div>

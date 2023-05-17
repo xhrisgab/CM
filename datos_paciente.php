@@ -16,9 +16,9 @@ $sex = $_POST['sex'];
 if (mysqli_connect_errno()) {
     return 'No conectado';
 }
-else{
+/*else{
     echo 'Conectado';}
-
+*/
 $sql = "INSERT INTO paciente VALUES ('".$codigo."','".$nombre."','".$lastName1."','".$lastName2."','".$birthdat."','".$address."','".$ciudad."',".$telefono.",".$celular.",'".$sex."')";
 //    echo $sql;
         if (mysqli_query($mysqli, $sql) === TRUE) {
@@ -55,4 +55,5 @@ $sql = "INSERT INTO paciente VALUES ('".$codigo."','".$nombre."','".$lastName1."
 } else {
             echo "Error: " . $sql . "" . mysqli_error($conn);
         }
+        mysqli_close($mysqli);
 ?>
