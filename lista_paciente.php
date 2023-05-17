@@ -33,42 +33,46 @@ if (mysqli_connect_errno()) {
         </div>
     </div>
     <div class="container p-2">
-        <table class="table table-dark table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Fecha Nacimiento</th>
-                    <th scope="col">Sexo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    $sql = "SELECT ci, nombre, apellido_pat, fecha_nacimiento, sexo FROM paciente";
-                    $result = mysqli_query($mysqli, $sql);
-
-                    if (mysqli_num_rows($result) > 0) {
-                        // output data of each row
-                        $i=0;
-                        while($row = mysqli_fetch_assoc($result)) {
-                            $i++;
-                            ?>
-                            <tr>
-                                <th scope="row"><?php echo $i;?></th>
-                                <td><?php echo $row["nombre"];?></td>
-                                <td><?php echo $row["apellido_pat"];?></td>
-                                <td><?php echo $row["fecha_nacimiento"];?></td>
-                                <td><?php echo $row["sexo"];?></td>
-                            </tr>
-                    <?php    }
-                      } else { ?>
-                        <th scope="row"><?php echo "0 resultados encontrados...";?></th>
-                    <?php  }
-                ?>
-            </tbody>
-
-        </table>
+        <div class="table-responsive-md">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">carnetde Identidad</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Fecha Nacimiento</th>
+                        <th scope="col">Sexo</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $sql = "SELECT CI, nombre, apellido_pat, fecha_nacimiento, sexo FROM paciente";
+                        $result = mysqli_query($mysqli, $sql);
+    
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            $i=0;
+                            while($row = mysqli_fetch_assoc($result)) {
+                                $i++;
+                                ?>
+                                <tr>
+                                    <th scope="row"><?php echo $row["CI"];?></th>
+                                    <td><?php echo $row["nombre"];?></td>
+                                    <td><?php echo $row["apellido_pat"];?></td>
+                                    <td><?php echo $row["fecha_nacimiento"];?></td>
+                                    <td><?php echo $row["sexo"];?></td>
+                                    <td><a href="ver_paciente.php?ci=<?php echo $row["CI"]?>">Ver mas...</a></td>
+                                </tr>
+                        <?php    }
+                          } else { ?>
+                            <th scope="row"><?php echo "0 resultados encontrados...";?></th>
+                        <?php  }
+                    ?>
+                </tbody>
+    
+            </table>
+        </div>
 
         <br>
     </div>
