@@ -1,5 +1,5 @@
 <?PHP
-include('./conexion/conexion.php');
+include('../conexion/conexion.php');
 $mysqli = conectar();
 
 $codigo = $_POST['ci'];
@@ -9,8 +9,8 @@ $lastName2 = $_POST['lastName2'];
 $birthdat = $_POST['birthday'];
 $address = $_POST['address'];
 $ciudad = $_POST['ciudad'];
-$telefono = $_POST['telefono'];
-$celular = $_POST['celular'];
+if($_POST['telefono']==''){$telefono = 0;} else{$telefono = $_POST['telefono'];}
+if($_POST['celular']==''){$celular = 0;} else{$celular = $_POST['celular'];}
 $sex = $_POST['sex'];
 
 if (mysqli_connect_errno()) {
@@ -20,7 +20,7 @@ if (mysqli_connect_errno()) {
     echo 'Conectado';}
 */
 $sql = "INSERT INTO paciente VALUES ('".$codigo."','".$nombre."','".$lastName1."','".$lastName2."','".$birthdat."','".$address."','".$ciudad."',".$telefono.",".$celular.",'".$sex."')";
-//    echo $sql;
+ //   echo $sql;
         if (mysqli_query($mysqli, $sql) === TRUE) {
 
 ?>

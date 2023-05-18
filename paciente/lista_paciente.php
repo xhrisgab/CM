@@ -1,5 +1,5 @@
 <?PHP
-include('./conexion/conexion.php');
+include('../conexion/conexion.php');
 $mysqli = conectar();
 if (mysqli_connect_errno()) {
     return 'No conectado';
@@ -19,7 +19,7 @@ if (mysqli_connect_errno()) {
     <div class="container p-2">
         <div class="row">
             <div class="col-12 col-md-2 col-sm-12">
-                <form action="pag_principal.php" method="post">
+                <form action="../pag_principal.php" method="post">
                     <input type="hidden" value="admin" name="nombre" id="nombre">
                     <input type="hidden" value="admin" name="pass" id="pass">
                     <button type="submit" class="btn btn-secondary">Atras...</button>

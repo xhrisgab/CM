@@ -27,7 +27,7 @@ echo $pass;*/
 <body>
     <div class="container">
         <h2>Seleccione la opcion</h2>
-        <form action="lista_paciente.php" method="get">
+        <form action="paciente/lista_paciente.php" method="get">
         <button type="submit" class="btn btn-primary">Registro paciente</button>
         </form>
     </div>

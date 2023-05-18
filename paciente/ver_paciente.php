@@ -1,5 +1,5 @@
 <?php
-include('./conexion/conexion.php');
+include('../conexion/conexion.php');
 $mysqli = conectar();
 if (mysqli_connect_errno()) {
     return 'No conectado';
@@ -52,24 +52,24 @@ $sql = "SELECT * FROM paciente WHERE CI='".$ci."'";
                     </div>
                     <div class="form-group">
                         <label for="Apellido1">Apellido del Paciente1:</label>
-                        <input type="text" class="form-control" id="Apellido1" name="lastName1" disabled>
+                        <input type="text" class="form-control" id="Apellido1" value="<?php echo $row['apellido_pat'];?>" name="lastName1" disabled>
                     </div>
                     <div class="form-group">
                         <label for="Apellid2">Apellido del Paciente2:</label>
-                        <input type="text" class="form-control" id="Apellido2" name="lastName2" disabled>
+                        <input type="text" class="form-control" id="Apellido2" value="<?php echo $row['apellido_mat'];?>" name="lastName2" disabled>
                     </div>
                     <div class="form-group">
                         <label for="Data">Fecha de Nacimiento:</label>
-                        <input type="date" class="form-control" id="birthday" name="birthday"disabled>
+                        <input type="date" class="form-control" id="birthday" value="<?php echo $row['fecha_nacimiento'];?>" name="birthday"disabled>
                     </div>
                     <div class="form-group">
                         <label for="Direccion">Direccion del paciente:</label>
-                        <input type="text" class="form-control" id="address" name="address" disabled>
+                        <input type="text" class="form-control" id="address" value="<?php echo $row['direccion'];?>" name="address" disabled>
                     </div>
                     <div class="form-group">
                         <label for="Direccion">Ciudad:</label>
                         <select class="form-select" aria-label="Default" name="ciudad" id="ciudad" disabled>
-                            <option selected>Seleccione una opcion...</option>
+                            <option value="<?php echo $row['ciudad'];?>" selected><?php echo $row['ciudad'];?></option>
                             <option value="La Paz">La Paz</option>
                             <option value="Oruro">Oruro</option>
                             <option value="Potosi">Potosi</option>
@@ -84,22 +84,22 @@ $sql = "SELECT * FROM paciente WHERE CI='".$ci."'";
                     </div>
                     <div class="form-group">
                         <label for="Cellphone">Telefono:</label>
-                        <input type="number" class="form-control" id="telefono" name="telefono" disabled>
+                        <input type="number" class="form-control" id="telefono" value="<?php echo $row['telefono'];?>" name="telefono" disabled>
                     </div>
                     <div class="form-group">
                         <label for="Cellphone">Celular:</label>
-                        <input type="number" class="form-control" id="celular" name="celular" disabled>
+                        <input type="number" class="form-control" id="celular" value="<?php echo $row['celular'];?>" name="celular" disabled>
                     </div>
                     <div class="form-group">
                         <label for="Sexo">Genero:</label>
                         <select class="form-select" aria-label="Default select example" name="sex" id="sex" disabled>
-                            <option selected>Seleccione una opcion...</option>
+                            <option value="<?php echo $row['sexo'];?>" selected><?php echo ($row['sexo']==='M') ? 'Masculino' : 'Femenino';?></option>
                             <option value="M">Masculino</option>
                             <option value="F">Femenino</option>
                         </select>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-success">Registrar</button>
+                    <button type="submit" class="btn btn-success" disabled>Registrar</button>
                 </form>
             </div>
         </div>
